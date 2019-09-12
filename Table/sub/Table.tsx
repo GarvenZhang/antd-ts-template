@@ -14,16 +14,18 @@ let Table: any = class extends React.Component<Props> {
       key: ""
     },
     {
-      title: "",
-      dataIndex: "",
-      key: "",
+      title: "操作",
+      dataIndex: "operate",
+      key: "operate",
       render: (
         text: any,
         record: ,
         index: number
       ): React.ReactNode | undefined => {
         return (
-  
+          <div className="btn-wrap">
+            
+          </div>
         );
       }
     },

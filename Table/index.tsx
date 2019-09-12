@@ -8,7 +8,7 @@ interface Props {
 }
 
 interface State {
-
+  addClassificationModalVisible: boolean
 }
 
 let ComponentName: any = class extends React.Component<
@@ -16,7 +16,7 @@ let ComponentName: any = class extends React.Component<
   State
   > {
   readonly state: State = {
-
+    addClassificationModalVisible: false
   };
 
 
@@ -26,7 +26,7 @@ let ComponentName: any = class extends React.Component<
 
   // 提交添加分类表格
   addClassificationFormSubmit = () => {
-    this.addClassificationForm.validateFields((err: any, values: any) => {
+    this.addClassificationForm.validateFields((err: any, {}: any) => {
       if (err) {
         return;
       }
@@ -45,7 +45,7 @@ let ComponentName: any = class extends React.Component<
     });
   };
   // 展示添加分类的弹窗
-  showAddClassificationModal = (e: any, curItem) => {
+  showAddClassificationModal = (e: any, curItem: ) => {
     this.setState({
       addClassificationModalVisible: true,
       curItem

@@ -48,11 +48,7 @@ let UpdateRoleForm: any = class extends React.Component<Props, State> {
   }
 };
 
-UpdateRoleForm = Form.create<Props>({
-  onFieldsChange(props, changedFields: any) {
-    props.onChange(changedFields.department.value);
-  }
-})(UpdateRoleForm);
+UpdateRoleForm = Form.create<Props>({})(UpdateRoleForm);
 UpdateRoleForm = connect(
   (state: any) => ({
 
