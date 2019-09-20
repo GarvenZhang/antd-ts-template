@@ -6,10 +6,7 @@ export const strategies = {
     state: State,
     {  }: any
   ) => {
-    return {
-      ...state,
- 
-    };
+    return { ...state,  };
   },
 };
 

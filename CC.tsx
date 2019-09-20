@@ -45,13 +45,11 @@ let ComponentName: any = class extends React.Component<
 };
 
 ComponentName = connect(
-  (state: any) => ({
+  ({}: any) => ({
 
   }),
   {
-    ...{
-
-    }
+    
   }
 )(ComponentName);
 

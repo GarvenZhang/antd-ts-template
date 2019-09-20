@@ -70,7 +70,7 @@ let ComponentName: any = class extends React.Component<
     return (
       <div className="">
         <div className="table-wrap">
-
+          
         </div>
         <Modal
           title="新增分类"

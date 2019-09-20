@@ -18,9 +18,7 @@ export const getUserList: (
     }: CommonResponseData<GetUserListInfo> = await get_user_list(paramsObj);
     dispatch({
       type: actionTypes.GET_USER_LIST,
-      value: {
-
-      }
+      value: {  }
     });
     cb && cb();
   } catch (e) {
@@ -35,8 +33,7 @@ export const getRoleList: () => void = () => async (dispatch: Dispatch) => {
     }: CommonResponseData<RoleItem> = await get_role_list();
     dispatch({
       type: actionTypes.GET_ROLE_LIST,
-      value: {
-      }
+      value: {  }
     });
   } catch (e) {
     console.error(e);
