@@ -44,6 +44,9 @@ let Table: any = class extends React.Component<Props> {
       <div className="">
         <Table
           columns={columns}
+          locale={{
+            emptyText: '暂无数据~'
+          }}
           dataSource={}
           pagination={{}}
         />

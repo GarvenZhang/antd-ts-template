@@ -32,7 +32,6 @@ let searchSelect = (
     })(
       <Select
         showSearch
-        onSelect={selectHandle}
         placeholder=""
         optionFilterProp="value"
         filterOption={(input, option: any) =>

@@ -2,10 +2,7 @@ import * as actionTypes from "./actionTypes";
 import { Dispatch } from "redux";
 import {  } from "../fetch/api";
 import {
-  GetUserListParams,
-  UpdateRoleRequestData,
-  GetUserListInfo,
-  RoleItem
+
 } from "../type";
 
 export const getUserList: (
