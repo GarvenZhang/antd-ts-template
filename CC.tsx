@@ -12,10 +12,7 @@ interface State {
 
 }
 
-let ComponentName: any = class extends React.Component<
-  Props,
-  State
-  > {
+let ComponentName: any = class extends React.Component<Props, State> {
   readonly state: State = {
 
   };
@@ -26,15 +23,9 @@ let ComponentName: any = class extends React.Component<
   }
 
   render() {
-    const {
-
-    } = this;
-    const {
-
-    } = this.props;
-    const {
-
-    } = this.state;
+    const {  } = this;
+    const {  } = this.props;
+    const {  } = this.state;
 
     return (
       <div className="">
@@ -45,12 +36,8 @@ let ComponentName: any = class extends React.Component<
 };
 
 ComponentName = connect(
-  ({}: any) => ({
-
-  }),
-  {
-    
-  }
+  ({}: any) => ({ }),
+  { }
 )(ComponentName);
 
 export { ComponentName };

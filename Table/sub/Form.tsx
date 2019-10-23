@@ -8,7 +8,7 @@ interface Props extends FormComponentProps {
 
 interface State { }
 
-let UpdateRoleForm: any = class extends React.Component<Props, State> {
+class FormCC extends React.Component<Props, State> {
   readonly state: State = {};
 
   formItemLayout = {
@@ -23,7 +23,6 @@ let UpdateRoleForm: any = class extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    this.props._ref. = this.props.form; 
   }
 
   render() {
@@ -48,15 +47,5 @@ let UpdateRoleForm: any = class extends React.Component<Props, State> {
   }
 };
 
-UpdateRoleForm = Form.create<Props>({})(UpdateRoleForm);
-UpdateRoleForm = connect(
-  (state: any) => ({
-
-  }),
-  {
-    ...{
-
-    }
-  }
-)(UpdateRoleForm);
+let UpdateRoleForm = Form.create<Props>({})(FormCC);
 export { UpdateRoleForm };

@@ -18,7 +18,7 @@ let Table: any = class extends React.Component<Props> {
       dataIndex: "operate",
       key: "operate",
       render: (
-        text: any,
+        text: string,
         record: ,
         index: number
       ): React.ReactNode | undefined => {

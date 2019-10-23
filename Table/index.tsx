@@ -1,5 +1,6 @@
 import * as React from "./node_modules/react";
 import { Table, Modal } from './node_modules/antd'
+import { FormComponentProps } from "antd/lib/form";
 
 import "./index.scss";
 
@@ -15,6 +16,8 @@ let ComponentName: any = class extends React.Component<
   Props,
   State
   > {
+  private updateRoleForm = React.createRef<FormComponentProps>();
+
   readonly state: State = {
     addClassificationModalVisible: false
   };
@@ -24,9 +27,11 @@ let ComponentName: any = class extends React.Component<
 
   }
 
-  // 提交添加分类表格
+  // 提交添加分类表单
   addClassificationFormSubmit = () => {
-    this.addClassificationForm.validateFields((err: any, {}: any) => {
+    const updateRoleForm = this.updateRoleForm.current!.form
+
+    updateRoleForm.validateFields((err: any, {}: any) => {
       if (err) {
         return;
       }
@@ -36,10 +41,10 @@ let ComponentName: any = class extends React.Component<
 
         },
         () => {
+          // 刷新
+          this.props.getGlossary();
           // 隐藏modal
           this.hideAddClassificationModal();
-          // 重置表单
-          this.addClassificationForm.resetFields();
         }
       );
     });
@@ -53,7 +58,12 @@ let ComponentName: any = class extends React.Component<
   };
   // 隐藏添加分类的弹窗
   hideAddClassificationModal = () => {
+    const updateRoleForm = this.updateRoleForm.current!.form
+
+    // 重置当前选中元素及弹窗状态
     this.setState({ addClassificationModalVisible: false, curItem: {} });
+    // 重置表单选项
+    updateRoleForm.resetFields();
   };
 
   render() {
@@ -80,7 +90,7 @@ let ComponentName: any = class extends React.Component<
           onOk={}
           onCancel={}
         >
-          <AddForm _ref={this} />
+          <AddForm  />
         </Modal>
         <Modal
           title="修改分类"
@@ -90,7 +100,7 @@ let ComponentName: any = class extends React.Component<
           onOk={}
           onCancel={}
         >
-          <UpdateForm _ref={this} />
+          <UpdateForm wrappedComponentRef={this.updateRoleForm} />
         </Modal>
       </div>
     )
