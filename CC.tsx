@@ -36,7 +36,7 @@ let ComponentName: any = class extends React.Component<Props, State> {
 };
 
 ComponentName = connect(
-  ({}: any) => ({ }),
+  ({}: AppState) => ({ }),
   { }
 )(ComponentName);
 
