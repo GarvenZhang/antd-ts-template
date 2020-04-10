@@ -31,8 +31,8 @@ let searchSelect = (
 
     })(
       <Select
-        showSearch
         placeholder=""
+        showSearch
         optionFilterProp="value"
         filterOption={(input, option: any) =>
           option.props.value
